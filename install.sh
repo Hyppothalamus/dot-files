@@ -9,14 +9,15 @@ echo "installing packages"
 
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
-sudo apt install -y fish fortune cowsay lolcat tmux neovim
+sudo apt install -y curl fish fortune cowsay lolcat tmux neovim
 
 echo "installing plugin managers"
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-fisher install IlanCosman/tide@v5
+
+fish -C fisher install IlanCosman/tide@v5 && exit
 
 echo "moving stuff"
 
