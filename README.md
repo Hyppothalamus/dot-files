@@ -1,5 +1,5 @@
-#DOT-FILES
-##installation
+# DOT-FILES
+## installation
 git clone this in a bare repo
 ```bash
 git clone --bare https://github.com/Hyppothalamus/dot-files.git $HOME/.cfg
