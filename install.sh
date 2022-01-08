@@ -18,8 +18,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-fish -c (fisher install IlanCosman/tide@v5 && exit)
-
 echo "moving stuff"
 
 cp openTmux.sh /opt/openTmux.sh
