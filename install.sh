@@ -9,7 +9,7 @@ echo "installing packages"
 
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
-sudo apt install -y curl fish fortune cowsay lolcat tmux neovim
+sudo apt install -y curl fish fortune cowsay lolcat tmux neovim bat
 
 echo "installing plugin managers"
 chmod 775 fish-install.sh
