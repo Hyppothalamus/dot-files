@@ -12,5 +12,6 @@ cpanm Term::Animation
 
 echo "downloading fihies and storing in /usr/bin/fishies"
 wget -O /usr/bin/fishies https://raw.githubusercontent.com/rwxrob/dot/main/scripts/fishies
+chmod 775 /usr/bin/fishies
 
 echo "done"
