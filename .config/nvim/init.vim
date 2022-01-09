@@ -30,6 +30,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'ellisonleao/glow.nvim'
+Plug 'mhinz/vim-signify'
 call plug#end()
 set number
 lua << END
