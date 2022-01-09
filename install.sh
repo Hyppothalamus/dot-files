@@ -13,7 +13,7 @@ sudo apt install -y curl fish fortune cowsay lolcat tmux neovim bat
 
 echo "installing plugin managers"
 chmod 775 fish-install.sh
-fish -c ./fish-install.sh
+runuser -l $SUDO_USER -c 'fish -c ./fish-install.sh'
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
