@@ -25,3 +25,6 @@ chmod 755 /opt/openTmux.sh
 ln -s /opt/openTmux.sh /usr/bin/openTmux
 
 echo "installed opentmux script"
+echo "installing fishies script"
+chmod 775 install-fishies.sh
+./install-fishies.sh
