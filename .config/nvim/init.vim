@@ -1,3 +1,5 @@
+set number relativenumber
+set nu rnu
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
@@ -22,18 +24,23 @@ Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lock
 let g:coc_global_extension = ['coc-tsserver', 'coc-tslint-plugin', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-jedi', 'coc-sh']
 Plug 'andweeb/presence.nvim'
 Plug 'wakatime/vim-wakatime'
+Plug 'navarasu/onedark.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+Plug 'ellisonleao/glow.nvim'
 call plug#end()
 set number
 lua << END
 require'lualine'.setup {
 	options = {
-		theme = 'powerline_dark'
+		theme = 'onedark'
 		}
 }
+END
+lua << END
+require('onedark').load()
 END
 
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
