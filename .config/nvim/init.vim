@@ -21,7 +21,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-let g:coc_global_extension = ['coc-tsserver', 'coc-tslint-plugin', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-jedi', 'coc-sh']
+let g:coc_global_extension = ['coc-tsserver', 'coc-tslint-plugin', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-jedi', 'coc-sh', 'coc-go']
 Plug 'andweeb/presence.nvim'
 Plug 'wakatime/vim-wakatime'
 Plug 'navarasu/onedark.nvim'
