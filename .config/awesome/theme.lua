@@ -12,23 +12,41 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.font          = "sans 8"
+ 
+-- theme.bg_normal     = "#222222"
+-- theme.bg_focus      = "#535d6c"
+-- theme.bg_urgent     = "#ff0000"
+-- theme.bg_minimize   = "#444444"
+-- theme.bg_systray    = theme.bg_normal
+-- 
+-- theme.fg_normal     = "#aaaaaa"
+-- theme.fg_focus      = "#ffffff"
+-- theme.fg_urgent     = "#ffffff"
+-- theme.fg_minimize   = "#ffffff"
+-- 
+-- theme.useless_gap   = dpi(0)
+-- theme.border_width  = dpi(1)
+-- theme.border_normal = "#000000"
+-- theme.border_focus  = "#535d6c"
+-- theme.border_marked = "#91231c"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
-
-theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.fg_normal                                 = "#ebdbb2"
+theme.fg_focus                                  = "#FB4934"
+theme.fg_urgent                                 = "#CC9393"
+theme.bg_normal                                 = "#1d2021"
+theme.bg_focus                                  = "#313131"
+theme.bg_urgent                                 = theme.bg_normal
+theme.border_width                              = dpi(0)
+theme.border_normal                             = "#3F3F3F"
+theme.border_focus                              = "#7F7F7F"
+theme.border_marked                             = "#CC9393"
+theme.tasklist_bg_focus                         = theme.bg_normal
+theme.titlebar_bg_focus                         = theme.bg_focus
+theme.titlebar_bg_normal                        = theme.bg_normal
+theme.titlebar_fg_focus                         = "#FABD2F" -- gruvbox yellow
+theme.menu_height                               = dpi(15)
+theme.menu_width                                = dpi(140)
 
 theme.taglist_fg_focus    = "#3992af"
 theme.taglist_fg_occupied = "#164b5d"

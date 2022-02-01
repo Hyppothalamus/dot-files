@@ -77,7 +77,7 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 awful.spawn("discord")
-awful.spawn("premid")
+awful.spawn("checkprocess premid")
 awful.spawn("xrandr --output DP-0 --output DP-2 --left-of DP-0")
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -244,7 +244,6 @@ awful.screen.connect_for_each_screen(function(s)
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-   	    wibox.widget.systray(),
         spotify_widget({
             font = 'Ubuntu Mono 9',
             play_icon = '/usr/share/icons/Papirus-Light/24x24/categories/spotify.svg',
@@ -252,23 +251,27 @@ awful.screen.connect_for_each_screen(function(s)
             dim_when_paused = true,
             dim_opacity = 0.5,
             max_length = -1,
-            show_tooltip = false
+            show_tooltip = true
         }),
+   	    wibox.widget.systray(),
         layout = wibox.layout.fixed.horizontal,
         mykeyboardlayout,
 	    volume_widget({
-		widget_type = "arc"
+            widget_type = "arc"
 	    }),
         docker_widget(),
 	    fs_widget({ mounts = { '/', '/home/kasper/DATA', '/home/kasper/GAMES' } }),
 	    ram_widget(),
 	    cpu_widget(),
+        awful.widget.watch([[bash -c "cat /sys/class/hwmon/hwmon1/device/hwmon/hwmon1/temp1_input | awk '{print \$1/1000 \"°C\"}'"]], 15),
         weather_widget({
              api_key='2a0ef1c2fc6d355dc7b3ad23ff9f3002',
              coordinates = {51.0737168, 4.6049726},
         }),
         mytextclock,
-	    logout_menu_widget(),
+	    logout_menu_widget({
+            onlock = function() awful.spawn.with_shell('i3lock-fancy') end
+        }),
         s.mylayoutbox,
         },
     }
@@ -373,6 +376,12 @@ globalkeys = gears.table.join(
                 {description = "run prompt", group = "launcher" }),
     awful.key({modkey}, "q", function() awful.spawn(browser) end,
 	        {description = "run browser", group = "launcher" }),
+
+    awful.key({ modkey }, ")", function() volume_widget:inc(5) end, {description = "increase volume", group = "custom"}),
+    awful.key({ modkey }, "-", function() volume_widget:dec(5) end, {description = "decrease volume", group = "custom"}),
+    awful.key({ modkey }, "à", function() volume_widget:toggle() end, {description = "mute volume", group = "custom"}),
+    awful.key({ modkey, "Shift" }, "l", function() awful.util.spawn("sp pause; i3lock-fancy") end, {description = "lock the screen", group = "awesome"}),
+
 
     awful.key({ modkey }, "x",
               function ()
