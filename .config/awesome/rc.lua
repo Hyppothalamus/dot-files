@@ -59,6 +59,8 @@ local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
+local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 
 local browser = "firefox"
 
@@ -73,6 +75,10 @@ editor_cmd = terminal .. " -e " .. editor
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
+
+awful.spawn("discord")
+awful.spawn("premid")
+awful.spawn("xrandr --output DP-0 --output DP-2 --left-of DP-0")
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -238,22 +244,32 @@ awful.screen.connect_for_each_screen(function(s)
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+   	    wibox.widget.systray(),
+        spotify_widget({
+            font = 'Ubuntu Mono 9',
+            play_icon = '/usr/share/icons/Papirus-Light/24x24/categories/spotify.svg',
+            pause_icon = '/usr/share/icons/Papirus-Dark/24x24/panel/spotify-indicator.svg',
+            dim_when_paused = true,
+            dim_opacity = 0.5,
+            max_length = -1,
+            show_tooltip = false
+        }),
+        layout = wibox.layout.fixed.horizontal,
+        mykeyboardlayout,
 	    volume_widget({
 		widget_type = "arc"
 	    }),
-	    fs_widget(),
+        docker_widget(),
+	    fs_widget({ mounts = { '/', '/home/kasper/DATA', '/home/kasper/GAMES' } }),
 	    ram_widget(),
 	    cpu_widget(),
-   	    wibox.widget.systray(),
-    	    weather_widget({
+        weather_widget({
              api_key='2a0ef1c2fc6d355dc7b3ad23ff9f3002',
              coordinates = {51.0737168, 4.6049726},
-            }),
-            mytextclock,
+        }),
+        mytextclock,
 	    logout_menu_widget(),
-            s.mylayoutbox,
+        s.mylayoutbox,
         },
     }
 end)
