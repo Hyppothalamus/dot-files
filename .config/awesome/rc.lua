@@ -260,10 +260,10 @@ awful.screen.connect_for_each_screen(function(s)
             widget_type = "arc"
 	    }),
         docker_widget(),
-	    fs_widget({ mounts = { '/', '/home/kasper/DATA', '/home/kasper/GAMES' } }),
+	    fs_widget({ mounts = { '/', '/home/kasper/DATA', '/home/kasper/GAMES', '/home/kasper/share' } }),
 	    ram_widget(),
 	    cpu_widget(),
-        awful.widget.watch([[bash -c "cat /sys/class/hwmon/hwmon1/device/hwmon/hwmon1/temp1_input | awk '{print \$1/1000 \"°C\"}'"]], 15),
+        awful.widget.watch([[bash -c "cat /sys/class/hwmon/hwmon1/device/hwmon/hwmon1/temp1_input | awk '{print \$1/1000 \"°C\"}'"]], 5),
         weather_widget({
              api_key='2a0ef1c2fc6d355dc7b3ad23ff9f3002',
              coordinates = {51.0737168, 4.6049726},
@@ -380,7 +380,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, ")", function() volume_widget:inc(5) end, {description = "increase volume", group = "custom"}),
     awful.key({ modkey }, "-", function() volume_widget:dec(5) end, {description = "decrease volume", group = "custom"}),
     awful.key({ modkey }, "à", function() volume_widget:toggle() end, {description = "mute volume", group = "custom"}),
-    awful.key({ modkey, "Shift" }, "l", function() awful.util.spawn("sp pause; i3lock-fancy") end, {description = "lock the screen", group = "awesome"}),
+    awful.key({ modkey, "Shift" }, ")", function() awful.util.spawn("sp prev") end, {description = "previous spotify song", group = "custom"}),
+    awful.key({ modkey, "Shift" }, "-", function() awful.util.spawn("sp next") end, {description = "next spotify song", group = "custom"}),
+    awful.key({ modkey, "Shift" }, "à", function() awful.util.spawn("sp play") end, {description = "pause/play spotify", group = "custom"}),
+    
+    awful.key({ modkey, "Shift" }, "=", function() awful.util.spawn("sp pause; i3lock-fancy") end, {description = "lock the screen", group = "awesome"}),
 
 
     awful.key({ modkey }, "x",
