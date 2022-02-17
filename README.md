@@ -1,5 +1,17 @@
 # DOT-FILES
+
 ## installation
+
+### requirements
+
+* i3
+    * i3-gaps
+    * i3bars
+    * i3lock-color
+* neovim
+* tmux
+* fishs shell
+
 git clone this in a bare repo
 ```bash
 git clone --bare https://github.com/Hyppothalamus/dot-files.git $HOME/.cfg
