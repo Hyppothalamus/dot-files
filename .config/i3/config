@@ -278,6 +278,8 @@ bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
+bindsym $mod+Shift+v exec spectacle -r
+
 ##########################################
 # configuration for workspace behaviour: #
 ##########################################
@@ -418,7 +420,7 @@ exec --no-startup-id discord
 # picom
 exec --no-startup-id "picom &"
 # nitrogen
-exec --no-startup-id "nitrogen --restor"
+exec --no-startup-id "nitrogen --restore"
 
 # networkmanager-applet
 #exec --no-startup-id nm-applet
