@@ -70,12 +70,14 @@ This script depends on:
 # Check whether the user-defined launcher is valid
 launcher_list=(rofi zenity)
 function check_launcher() {
+    echo "checking launcher"
   if [[ ! "${launcher_list[@]}" =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
     echo "Supported launchers: ${launcher_list[*]}"
     exit 1
   else
     # Get array with unique elements and preferred launcher first
     # Note: uniq expects a sorted list, so we cannot use it
+    echo "found launchers"
     i=1
     launcher_list=($(for l in "$1" "${launcher_list[@]}"; do printf "%i %s\n" "$i" "$l"; let i+=1; done \
       | sort -uk2 | sort -nk1 | cut -d' ' -f2- | tr '\n' ' '))
@@ -105,7 +107,8 @@ function command_exists() {
 
 # systemctl required
 if ! command_exists systemctl ; then
-  exit 1
+    echo "exited bcs systemctl"
+#  exit 1
 fi
 
 # menu defined as an associative array
@@ -118,6 +121,16 @@ menu=(
   [ Reboot]="systemctl reboot"
   [ Suspend]="systemctl suspend"
   [ Hibernate]="systemctl hibernate"
+  [ Lock]="~/.config/i3/scripts/blur-lock"
+  [ Logout]="i3-msg exit"
+  [ Cancel]=""
+)
+
+menu_run=(
+  [ Shutdown]="poweroff"
+  [ Reboot]="reboot"
+  [ Suspend]="zzz"
+  [ Hibernate]="i3-msg hibernate"
   [ Lock]="~/.config/i3/scripts/blur-lock"
   [ Logout]="i3-msg exit"
   [ Cancel]=""
@@ -137,7 +150,7 @@ function prepare_launcher() {
     rofi_colors=(-bc "${BORDER_COLOR}" -bg "${BG_COLOR}" -fg "${FG_COLOR}" \
         -hlfg "${HLFG_COLOR}" -hlbg "${HLBG_COLOR}")
     launcher_exe="rofi"
-    launcher_options=(-dmenu -i -lines "${menu_nrows}" -p "${ROFI_TEXT}" \
+    launcher_options=(-dmenu -i -lines "${menu_nrows}" -config ~/.config/rofi/powermenu.rasi -p "${ROFI_TEXT}" \
         "${rofi_colors}" "${ROFI_OPTIONS[@]}")
   elif [[ "$1" == "zenity" ]]; then
     launcher_exe="zenity"
