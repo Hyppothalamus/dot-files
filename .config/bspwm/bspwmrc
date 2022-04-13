@@ -1,8 +1,12 @@
-#! /bin/sh
+#!/bin/sh
+
+# keyboard layout
+setxkbmap -layout be
 
 pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor DP-2 -d 1 2 3 4 5
+bspc monitor DP-0 -d 6 7 8 9 0
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -16,6 +20,12 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+# desktop screens
+$HOME/.screenlayout/layout.sh
+
+# polybar
+$HOME/.config/polybar/launch.sh
 
 nitrogen --restore
 picom &

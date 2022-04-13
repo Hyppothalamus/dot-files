@@ -81,8 +81,11 @@ super + {o,i}
   bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-  bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+  bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,0}'
+
+super + {_,shift + }{KP_1,KP_2,KP_3,KP_4,KP_5,KP_6,KP_7,KP_8,KP_9,KP_0}
+  bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,0}'
 
 #
 # preselect
@@ -119,6 +122,10 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
   bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# lock the screen
+super + alt + m
+  $HOME/.config/i3/scripts/blur-lock
 
 # app keybinds
 super + w
