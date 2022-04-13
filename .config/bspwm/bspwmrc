@@ -3,6 +3,9 @@
 # keyboard layout
 setxkbmap -layout be
 
+# desktop screens
+$HOME/.screenlayout/layout.sh
+
 pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
 bspc monitor DP-2 -d 1 2 3 4 5
@@ -15,14 +18,14 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a Firefox desktop='^2' follow=on
+bspc rule -a Thunar desktop='^3' follow=on
+bspc rule -a discord desktop='^6' follow=on
+bpsc rule -a spotify desktop='^0' follow=on
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-
-# desktop screens
-$HOME/.screenlayout/layout.sh
 
 # polybar
 $HOME/.config/polybar/launch.sh
