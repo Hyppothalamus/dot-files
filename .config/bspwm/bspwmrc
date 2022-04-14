@@ -1,5 +1,7 @@
 #!/bin/sh
 
+screens=$($HOME/.config/scripts/numscreens.py)
+
 # keyboard layout
 setxkbmap -layout be
 
@@ -8,8 +10,15 @@ $HOME/.screenlayout/layout.sh
 
 pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
-bspc monitor DP-2 -d 1 2 3 4 5
-bspc monitor DP-0 -d 6 7 8 9 0
+if [ $screens -eq 2 ] 
+then
+    bspc monitor DP-2 -d 1 2 3 4 5
+    bspc monitor DP-0 -d 6 7 8 9 0
+    echo "2 monitors"
+else
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+    echp "one or more monitors"
+fi
 
 bspc config border_width         2
 bspc config window_gap          12
