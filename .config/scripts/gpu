@@ -1,0 +1,2 @@
+#!/bin/bash
+nvidia-smi --query-gpu=utilization.gpu --format=csv | tr -d 'utilization.gpu [%]\n' | awk '{print $1"%"}'
