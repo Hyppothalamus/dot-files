@@ -1,0 +1,9 @@
+#!/bin/bash
+
+index=1 
+pactl list sinks | grep "alsa.card_name" | cut -c 20- | tr -d "\"" | while read line
+do
+    desc=$(pactl list sinks | grep "device.profile.description" | cut -c 32- | tr -d "\"" | sed -n "$index p")
+    echo "$line $desc"
+    (( index++ ))
+done

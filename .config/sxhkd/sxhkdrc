@@ -10,6 +10,12 @@ super + Return
 super + d
   rofi -modu drun -show drun -config ~/.config/rofi/rofidmenu.rasi
 
+super + shift + e
+  $HOME/.config/scripts/rofi-power
+
+super + shift + m
+  $HOME/.scripts/rofi-sound
+
 # make sxhkd reload its configuration files:
 super + Escape
   pkill -USR1 -x sxhkd

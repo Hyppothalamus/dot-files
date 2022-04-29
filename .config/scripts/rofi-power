@@ -14,7 +14,8 @@ chosen=$(printf '%s;%s;%s;%s;%s\n' "$power_off" "$reboot" "$lock" "$suspend" \
     | rofi -config ~/.config/rofi/powermenu.rasi \
            -dmenu \
            -sep ';' \
-           -selected-row 2)
+           -selected-row 2 \
+           -p power)
 
 case "$chosen" in
     "$power_off")

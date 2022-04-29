@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+selected=$($HOME/.scripts/list-sounds | rofi -config ~/.config/rofi/powermenu.rasi -dmenu -sep '\n' -selected-row 2 -p sound)
+
+
+pacmd list-sinks | tr '\n' '\r' | perl -pe 's/.*? *index: ([0-9]+).+?alsa\.card_name = "([^\r]+)"\r.+?(?=index:|$)/\2:\1\r/g' | tr '\r' '\n' | while IFS=':' read -r val index
+do
+    if [[ "$selected" == *"$val"* ]]; then
+        pacmd set-default-sink "$index"
+    fi
+done
+
