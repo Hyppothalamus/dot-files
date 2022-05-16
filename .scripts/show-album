@@ -1,0 +1,10 @@
+#!/bin/bash
+
+bspc rule -a feh -o state=floating
+
+feh $(sp art) -g 160x160+1600+25 --scale-down --title spotify-album-cover -s &
+
+sleep 1
+pid=$(pidof feh)
+sleep 9
+kill $pid
