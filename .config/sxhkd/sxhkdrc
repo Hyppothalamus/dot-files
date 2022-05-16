@@ -138,3 +138,14 @@ super + w
   firefox
 super + n
   thunar
+
+# music keybinds
+
+super + shift + underscore
+  playerctl next
+
+super + shift + degree
+  playerctl previous
+
+super + shift + p
+  playerctl play-pause
