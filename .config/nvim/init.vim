@@ -24,7 +24,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lock
 let g:coc_global_extension = ['coc-tsserver', 'coc-tslint-plugin', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-jedi', 'coc-sh', 'coc-go']
 Plug 'andweeb/presence.nvim'
 Plug 'wakatime/vim-wakatime'
-Plug 'navarasu/onedark.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -36,13 +36,18 @@ set number
 lua << END
 require'lualine'.setup {
 	options = {
-		theme = 'onedark'
+		theme = 'auto'
 		}
 }
 END
-lua << END
-require('onedark').load()
-END
+lua << EOF
+local catppuccin = require("catppuccin")
+catppuccin.setup({
+    transparent_background = true,
+    })
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.cmd[[colorscheme catppuccin]]
+EOF
 
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
