@@ -21,6 +21,10 @@ else
 fi
 
 bspc config border_width         2
+bspc config focused_border_color \#91d7e3
+bspc config normal_border_color \#f0c6c6
+bspc config active_border_color \#f0c6c6
+bspc config border_radius 8
 bspc config window_gap          12
 
 bspc config split_ratio          0.52
@@ -43,7 +47,7 @@ $HOME/.config/polybar/launch.sh
 nm-applet &
 nitrogen --restore
 dunst &
-picom &
+picom --config $HOME/.config/picom/picom.conf &
 discord &
 premid &
 emancs --daemon
