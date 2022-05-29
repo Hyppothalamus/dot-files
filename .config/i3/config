@@ -421,6 +421,8 @@ exec --no-startup-id discord
 exec --no-startup-id "picom &"
 # nitrogen
 exec --no-startup-id "nitrogen --restore"
+# emacs daemon
+exec --no-startup-id "eamcs --daemon"
 
 # networkmanager-applet
 #exec --no-startup-id nm-applet
