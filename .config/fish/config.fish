@@ -13,3 +13,4 @@ function fish_greeting
 	fish_add_path /opt/protoc-grpc-web
     fish_add_path $HOME/.emacs.d/bin
 end
+fish_add_path /home/kasper/.spicetify
