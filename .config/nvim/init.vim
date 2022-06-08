@@ -1,3 +1,4 @@
+set mouse=a
 set number relativenumber
 set nu rnu
 set tabstop=4       " The width of a TAB is set to 4.
@@ -48,6 +49,9 @@ catppuccin.setup({
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 vim.cmd[[colorscheme catppuccin]]
 EOF
+
+let g:neovide_refresh_rate = 75
+let g:neovide_transparency = 0.5
 
 "let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
@@ -130,8 +134,8 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = true,
   ignore_ft_on_setup  = {},
-  auto_close          = true,
-  open_on_tab         = true,
+  auto_close          = false,
+  open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
   update_to_buf_dir   = {
@@ -165,7 +169,7 @@ require'nvim-tree'.setup {
     height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = true,
+    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
@@ -173,7 +177,7 @@ require'nvim-tree'.setup {
   },
   actions = {
       open_file = {
-          quit_on_open = true,
+          quit_on_open = false,
           }
     }
 }
