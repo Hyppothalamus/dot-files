@@ -1,0 +1,6 @@
+#!/bin/bash
+
+name=$(wmctrl -m | grep Name | tr -d "Name:")
+export DESKTOP_SESSION=$name
+
+conky -c $HOME/.config/conky/catppuccin.conf
