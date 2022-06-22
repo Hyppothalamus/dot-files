@@ -44,6 +44,9 @@ bspc rule -a spectacle state=floating
 # polybar
 $HOME/.config/polybar/launch.sh
 
+export DESKTOP_SESSION="BSPWM"
+conky -c $HOME/.config/conky/catppuccin.conf
+
 nm-applet &
 nitrogen --restore
 dunst &
