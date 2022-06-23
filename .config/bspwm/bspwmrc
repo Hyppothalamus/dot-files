@@ -2,9 +2,6 @@
 
 screens=$($HOME/.config/scripts/numscreens.py)
 
-# keyboard layout
-setxkbmap -layout be
-
 # desktop screens
 $HOME/.screenlayout/layout.sh
 
@@ -32,6 +29,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a konsole desktop='^1' follow=on
 bspc rule -a Firefox desktop='^2' follow=on
 bspc rule -a Thunar desktop='^3' follow=on
 bspc rule -a discord desktop='^6' follow=on
