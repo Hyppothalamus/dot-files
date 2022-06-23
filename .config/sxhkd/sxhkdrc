@@ -87,10 +87,14 @@ super + {o,i}
   bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
-  bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,0}'
+# this is for frenchkeyboard/be layout
+# super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+#   bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,0}'
 
 super + {_,shift + }{KP_1,KP_2,KP_3,KP_4,KP_5,KP_6,KP_7,KP_8,KP_9,KP_0}
+  bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,0}'
+# this is for qwerty layout normally
+super + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
   bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,0}'
 
 #
