@@ -42,7 +42,11 @@ bspc rule -a spectacle state=floating
 # polybar
 $HOME/.config/polybar/launch.sh
 
+# conky
 $HOME/.scripts/launch-conky
+
+# auth polkit
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
 nm-applet &
 nitrogen --restore

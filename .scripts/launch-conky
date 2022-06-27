@@ -1,6 +1,10 @@
 #!/bin/bash
 
+echo "launching conky display"
+
 name=$(wmctrl -m | grep Name | tr -d "Name:")
 export DESKTOP_SESSION=$name
 
 conky -c $HOME/.config/conky/catppuccin.conf
+
+echo "launched conky"
