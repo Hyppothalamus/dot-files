@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-  rofi -modu drun -show drun -config ~/.config/rofi/rofidmenu.rasi
+  rofi -modu drun -show drun
 
 super + shift + e
   $HOME/.config/scripts/rofi-power
@@ -153,3 +153,22 @@ super + shift + degree
 
 super + shift + p
   playerctl play-pause
+
+#
+# media keys
+#
+
+XF86AudioPlay
+  playerctl play-pause
+
+XF86AudioNext
+  playerctl next
+
+XF86AudioPrev
+  playerctl previous
+
+Print
+  spectacle -f
+
+Print+shift
+  spectacle -r

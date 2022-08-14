@@ -6,6 +6,7 @@ alias ll="exa -la --icons"
 alias ls="exa --icons"
 alias emacs='emacsclient -c -a "emacs"'
 alias neo='neo -D'
+alias vim='nvim'
 
 function cdls 
     cd $argv; ll
