@@ -1,7 +1,8 @@
 local ok, catppuccin = pcall(require, 'catppuccin')
 if not ok then
-    print('catppuccin not found')
     -- not loaded
+    print('catppuccin not found')
+    return
 end
 
 catppuccin.setup({

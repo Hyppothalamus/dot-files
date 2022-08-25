@@ -1,7 +1,7 @@
 local ok, nvim_tree = pcall(require, 'nvim-tree')
 if not ok then
-    print('nvim-tree not found')
     -- not loaded
+    print('nvim-tree not found')
 end
 
 nvim_tree.setup {
@@ -52,7 +52,7 @@ nvim_tree.setup {
   },
   actions = {
       open_file = {
-          quit_on_open = false,
+          quit_on_open = true,
           resize_window = false,
       }
     },
@@ -67,7 +67,7 @@ nvim_tree.setup {
                 git = true,
                 folder = true,
                 file = true,
-                folder_arrow = true,
+                folder_arrow = false,
             },
             glyphs = {
                 default = '',
