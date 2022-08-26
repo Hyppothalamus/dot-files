@@ -26,5 +26,6 @@ packer.startup(function(use)
 }
   use 'kyazdani42/nvim-web-devicons'
   use 'mhinz/vim-signify'
+  use {"akinsho/toggleterm.nvim", as = 'toggleterm', tag = 'v2.*'}
 
 end)

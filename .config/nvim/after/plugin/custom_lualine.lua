@@ -7,6 +7,8 @@ end
 
 lualine.setup {
     options = {
-        theme = 'auto'
+        insons_enable = true,
+        theme = 'auto',
+        globalstatus = true,
     }
 }
