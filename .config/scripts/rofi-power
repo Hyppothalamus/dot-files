@@ -19,11 +19,11 @@ chosen=$(printf '%s;%s;%s;%s;%s\n' "$power_off" "$reboot" "$lock" "$suspend" \
 
 case "$chosen" in
     "$power_off")
-        sudo poweroff
+        poweroff
         ;;
 
     "$reboot")
-        sudo reboot
+        reboot
         ;;
 
     "$lock")
@@ -36,7 +36,7 @@ case "$chosen" in
         mpc --quiet pause
         amixer set Master mute
         # TODO Add your suspend command.
-        sudo zzz
+        hibernate
         ;;
 
     "$log_out")

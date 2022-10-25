@@ -30,14 +30,16 @@ bspc config gapless_monocle      true
 
 bspc rule -a Alacritty desktop='^1' follow=on
 bspc rule -a konsole desktop='^1' follow=on
-bspc rule -a Firefox desktop='^2' follow=on
+bspc rule -a firefox desktop='^2' follow=on
 bspc rule -a Thunar desktop='^3' follow=on
 bspc rule -a discord desktop='^6' follow=on
+bpsc rule -a Spotify desktop='^9' follow=on
 bpsc rule -a spotify desktop='^9' follow=on
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a spectacle state=floating
+bspc rule -a Pavucontrol state=floating
 
 # polybar
 $HOME/.config/polybar/launch.sh
