@@ -29,6 +29,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a kitty desktop='^1' follow=on
 bspc rule -a konsole desktop='^1' follow=on
 bspc rule -a firefox desktop='^2' follow=on
 bspc rule -a Thunar desktop='^3' follow=on
@@ -48,7 +49,7 @@ $HOME/.config/polybar/launch.sh
 $HOME/.scripts/launch-conky
 
 # auth polkit
-/usr/libexec/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-kde-authentication-agent-1 &
 
 nm-applet &
 nitrogen --restore
