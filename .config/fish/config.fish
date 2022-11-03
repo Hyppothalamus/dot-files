@@ -9,7 +9,7 @@ if status is-interactive
 end
 
 function fish_greeting
-	fortune | cowsay | lolcat -f
+    pokemon-colorscripts --no-title -r
 	fish_add_path /home/kasper/go/bin
 	fish_add_path /opt/protoc-grpc-web
     fish_add_path $HOME/.emacs.d/bin
