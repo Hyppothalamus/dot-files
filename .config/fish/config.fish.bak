@@ -19,3 +19,4 @@ fish_add_path /home/kasper/.spicetify
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+starship init fish | source

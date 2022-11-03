@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local builtin = require('telescope.builtin')
 
 -- tabs
 keymap.set('n', 'tn', ':tabedit<Return>', {silent = true})
@@ -21,6 +22,12 @@ keymap.set('n', 'qk', '<C-w>k')
 
 -- nvim tree
 keymap.set('n', '<C-n>', ':NvimTreeToggle<Enter>', {silent = true})
+
+-- telescope
+keymap.set('n', 'pp', builtin.find_files, {silent = true})
+keymap.set('n', 'fg', builtin.live_grep, {silent = true})
+keymap.set('n', 'fb', builtin.buffers, {silent = true})
+keymap.set('n', 'fh', builtin.help_tags, {silent = true})
 
 -- coc.nvim
 vim.cmd([[
