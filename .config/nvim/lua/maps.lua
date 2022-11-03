@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local telescope_maps = require("telescope.builtin")
 
 -- tabs
 keymap.set('n', 'tn', ':tabedit<Return>', {silent = true})
@@ -21,6 +22,9 @@ keymap.set('n', 'qk', '<C-w>k')
 
 -- nvim tree
 keymap.set('n', '<C-n>', ':NvimTreeToggle<Enter>', {silent = true})
+
+-- telescope
+keymap.set('n', 'pp', telescope_maps.find_files, {})
 
 -- coc.nvim
 vim.cmd([[
