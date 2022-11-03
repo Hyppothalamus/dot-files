@@ -28,8 +28,8 @@ packer.startup(function(use)
   use 'mhinz/vim-signify'
   use {"akinsho/toggleterm.nvim", as = 'toggleterm', tag = 'v2.*'}
   use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.0',
-      requires = { {'nvim-lua/plenary.nvim'} }
+      "nvim-telescope/telescope.nvim", tag = '0.1.0',
+      requires = { {"nvim-lua/plenary.nvim"} }, as = "telescope"
   }
   use {
       "startup-nvim/startup.nvim",
