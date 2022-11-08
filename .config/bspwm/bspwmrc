@@ -54,7 +54,7 @@ $HOME/.scripts/launch-conky
 nm-applet &
 nitrogen --restore
 dunst &
-picom --config $HOME/.config/picom/picom.conf &
+picom --config $HOME/.config/picom/picom.conf --experimental-backends &
 discord &
 premid &
 emancs --daemon
