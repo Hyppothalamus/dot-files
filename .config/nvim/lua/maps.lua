@@ -8,6 +8,9 @@ keymap.set('n', 'tt', ':terminal<Return>', {silent = true})
 -- splits
 keymap.set('n', 'vv', ':vsp<Return>', {silent = true})
 keymap.set('n', 'bb', ':sp<Return>', {silent = true})
+-- close file keybinds
+keymap.set('n', 'qq', ':q<Return>', {silent = true})
+keymap.set('n', 'qw', ':wq<Return>', {silent = true})
 
 -- move
 keymap.set('n', 'q<Right>', '<C-w>l')
@@ -27,7 +30,7 @@ keymap.set('n', '<C-n>', ':NvimTreeToggle<Enter>', {silent = true})
 keymap.set('n', 'fg', telescope_maps.live_grep, {silent = true})
 keymap.set('n', 'fb', telescope_maps.buffers, {silent = true})
 keymap.set('n', 'fh', telescope_maps.help_tags, {silent = true})
-keymap.set('n', 'pp', telescope_maps.find_files, {})
+keymap.set('n', 'fp', telescope_maps.find_files, {})
 
 -- coc.nvim
 vim.cmd([[
