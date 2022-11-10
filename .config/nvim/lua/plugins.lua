@@ -36,5 +36,6 @@ packer.startup(function(use)
         requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
         as = "startup"
     }
+    use { "edluffy/hologram.nvim", as = { "hologram" } }
 
 end)

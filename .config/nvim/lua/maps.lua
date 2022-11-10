@@ -10,7 +10,8 @@ keymap.set('n', 'vv', ':vsp<Return>', {silent = true})
 keymap.set('n', 'bb', ':sp<Return>', {silent = true})
 -- close file keybinds
 keymap.set('n', 'qq', ':q<Return>', {silent = true})
-keymap.set('n', 'qw', ':wq<Return>', {silent = true})
+keymap.set('n', 'qx', ':wq<Return>', {silent = true})
+keymap.set('n', 'qw', ':w<Return>', {silent = true})
 
 -- move
 keymap.set('n', 'q<Right>', '<C-w>l')
