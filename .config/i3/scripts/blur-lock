@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 
-PICTURE=/tmp/i3lock.png
-SCREENSHOT="scrot $PICTURE"
-
-BLUR="5x4"
-
 playerctl pause
-
-$SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
-i3lock -i $PICTURE -e \
-    --color=282828 \
+i3lock -e \
+    --color=00000000 \
     --inside-color=282828FF \
     --insidever-color=282828FF \
     --insidewrong-color=282828FF \
@@ -55,4 +47,3 @@ i3lock -i $PICTURE -e \
     --pass-screen-keys \
     --indicator \
     --clock
-rm $PICTURE

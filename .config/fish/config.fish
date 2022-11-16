@@ -5,6 +5,7 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.sdkman/bin
 fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/go/bin
+fish_add_path $HOME/.dotnet/tools
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
