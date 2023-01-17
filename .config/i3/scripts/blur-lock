@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-playerctl pause
+playerctl -p spotify pause
 i3lock -e \
     --color=00000000 \
     --inside-color=282828FF \
