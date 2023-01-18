@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name = Skype
+Comment = Open Skype
+Exec = chromium --app=https://web.skype.com
+Icon = skype
+Terminal = false
+Type = Application
+Categories = InstantMessaging;Network;

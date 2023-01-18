@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name = Discord (chromium)
+Comment = open Discord in chromium app page
+Exec = chromium --app=https://discord.com/app
+Icon = /opt/Discord/discord.png
+Terminal = false
+Type = Application
+Categories = InstantMessaging;Network;

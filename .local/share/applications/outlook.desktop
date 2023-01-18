@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name = Outlook
+Comment = Open outlook in a chrome app window
+Exec = chromium --app=https://outlook.live.com
+Icon = ms-outlook
+Terminal = false
+Type = Application
+Categories = Network;Work;
