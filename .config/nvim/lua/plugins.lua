@@ -10,9 +10,19 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use 'neovim/nvim-lspconfig'
+    use {
+        'williamboman/mason.nvim', as = 'mason'
+    }
+    use {
+        'williamboman/mason-lspconfig', as = 'mason-lspconfig'
+    }
+    use {
+        'neovim/nvim-lspconfig', as = 'nvim-lspconfig'
+    }
+    use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
+    use 'ms-jpq/coq.artifacts'
+    use 'ms-jpq/coq.thirdparty'
     use 'andweeb/presence.nvim'
-    use {'neoclide/coc.nvim', branch = 'release'}
     use 'wakatime/vim-wakatime'
     use {'catppuccin/nvim', as = 'catppuccin'}
     use 'nvim-lualine/lualine.nvim'
@@ -31,11 +41,13 @@ packer.startup(function(use)
         "nvim-telescope/telescope.nvim", tag = '0.1.0',
         requires = { {"nvim-lua/plenary.nvim"} }, as = "telescope"
     }
+    use { 'petertriho/nvim-scrollbar', as = 'scrollbar'}
+    use { 'lewis6991/gitsigns.nvim', as = "gitsign"}
     use {
         "startup-nvim/startup.nvim",
         requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
         as = "startup"
     }
-    use { "edluffy/hologram.nvim", as = { "hologram" } }
+    use { "edluffy/hologram.nvim", as = "hologram" }
 
 end)

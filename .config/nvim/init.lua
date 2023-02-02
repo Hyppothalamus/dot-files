@@ -15,6 +15,9 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 
+-- autostart coq
+vim.g.coq_settings = { auto_start = 'shut-up' }
+
 -- cmd settings
 vim.cmd([[
 hi CursorLineNr guifg=#af00af
