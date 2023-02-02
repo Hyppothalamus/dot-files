@@ -6,7 +6,22 @@ if not ok then
 end
 
 catppuccin.setup({
+    flavour = "macchiato",
     transparent_background = true,
-    })
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+    no_italic = false,
+    no_bold = false,
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        functions = { "italic" },
+    },
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        notify = false,
+        mini = false,
+    }
+})
 vim.cmd[[colorscheme catppuccin]]

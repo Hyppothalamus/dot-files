@@ -27,16 +27,18 @@ keymap.set('n', 'qk', '<C-w>k')
 -- nvim tree
 keymap.set('n', '<C-n>', ':NvimTreeToggle<Enter>', {silent = true})
 
+-- lsp config
+local opts = { noremap=true, silent=true }
+keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
 -- telescope
 keymap.set('n', 'fg', telescope_maps.live_grep, {silent = true})
 keymap.set('n', 'fb', telescope_maps.buffers, {silent = true})
 keymap.set('n', 'fh', telescope_maps.help_tags, {silent = true})
 keymap.set('n', 'fp', telescope_maps.find_files, {})
-
--- coc.nvim
-vim.cmd([[
-inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
-]])
 
 -- miscelanious
 keymap.set('n', 'q', '')
