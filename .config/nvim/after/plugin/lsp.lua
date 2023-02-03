@@ -41,24 +41,24 @@ local on_attach = function(client, bufnr)
 
     -- auto save
     if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                    -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    vim.lsp.buf.format({ bufnr = bufnr })
-                end,
-            })
-        end
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+                -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+                vim.lsp.buf.format({ bufnr = bufnr })
+            end,
+        })
+    end
 end
 
 mason_lspconfig.setup_handlers {
-    function (server_name) -- default handler (optional)
+    function(server_name) -- default handler (optional)
         lspconfig[server_name].setup(
             require('coq').lsp_ensure_capabilities({
                 on_attach = on_attach
-              })
+            })
         )
     end
 }
