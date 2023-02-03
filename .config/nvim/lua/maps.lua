@@ -33,7 +33,7 @@ keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-keymap.set('n', '<C-space>', vim.lsp.buf.format, opts)
+keymap.set('n', '<C-l>', vim.lsp.buf.format, opts)
 
 -- telescope
 keymap.set('n', 'fg', telescope_maps.live_grep, { silent = true })
