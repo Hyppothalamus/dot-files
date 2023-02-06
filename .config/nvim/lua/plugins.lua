@@ -22,6 +22,8 @@ packer.startup(function(use)
     use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
     use 'ms-jpq/coq.artifacts'
     use 'ms-jpq/coq.thirdparty'
+    use 'jose-elias-alvarez/null-ls.nvim'
+    use 'jay-babu/mason-null-ls.nvim'
     use 'andweeb/presence.nvim'
     use 'wakatime/vim-wakatime'
     use {'catppuccin/nvim', as = 'catppuccin'}
