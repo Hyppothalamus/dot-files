@@ -22,6 +22,8 @@ catppuccin.setup({
         telescope = true,
         notify = false,
         mini = false,
+        fidget = true,
+        noice = true,
     }
 })
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd [[colorscheme catppuccin]]
