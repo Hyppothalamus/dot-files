@@ -7,6 +7,6 @@ end
 
 fidget.setup({
     window = {
-        blend = 0
-    }
+        blend = 0,
+    },
 })

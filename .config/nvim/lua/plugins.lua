@@ -29,6 +29,7 @@ packer.startup(function(use)
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'feline-nvim/feline.nvim', as = 'feline' }
     use { 'j-hui/fidget.nvim', as = 'fidget' }
+    use { 'romgrk/barbar.nvim', as = 'barbar', requires = 'nvim-web-devicons' }
     use {
         'kyazdani42/nvim-tree.lua',
         as = 'nvim-tree',
@@ -51,18 +52,6 @@ packer.startup(function(use)
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
         as = "startup"
     }
-    use({
-        "folke/noice.nvim",
-        as = 'noice',
-        requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        }
-    })
     use({
         "utilyre/barbecue.nvim",
         tag = "*",
