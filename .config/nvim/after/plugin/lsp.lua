@@ -26,7 +26,7 @@ mason.setup({
     }
 })
 mason_lspconfig.setup({
-    ensure_installed = { "sumneko_lua", "gopls" },
+    ensure_installed = { "lua_ls", "gopls" },
     automatic_installation = true
 })
 

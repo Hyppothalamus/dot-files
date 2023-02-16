@@ -89,6 +89,9 @@ super + {o,i}
   bspc node {older,newer} -f; \
   bspc wm -h on
 
+super + shift {o,i}
+  bspc node -f {prev,next}.local
+
 # focus or send to the given desktop
 # this is for frenchkeyboard/be layout
 # super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}

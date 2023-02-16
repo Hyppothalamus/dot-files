@@ -11,3 +11,4 @@ alias vim='nvim'
 function cdls 
     cd $argv; ll
 end
+
