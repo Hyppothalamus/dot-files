@@ -12,3 +12,4 @@ alias sudo='doas'
 function cdls 
     cd $argv; ll
 end
+

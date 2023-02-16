@@ -29,7 +29,7 @@ packer.startup(function(use)
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'feline-nvim/feline.nvim', as = 'feline' }
     use { 'j-hui/fidget.nvim', as = 'fidget' }
-    use { 'romgrk/barbar.nvim', as = 'barbar', requires = 'nvim-web-devicons' }
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use {
         'kyazdani42/nvim-tree.lua',
         as = 'nvim-tree',
