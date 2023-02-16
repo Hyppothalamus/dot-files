@@ -7,6 +7,7 @@ alias ls="exa --icons"
 alias emacs='emacsclient -c -a "emacs"'
 alias neo='neo -D'
 alias vim='nvim'
+alias sudo='doas'
 
 function cdls 
     cd $argv; ll
