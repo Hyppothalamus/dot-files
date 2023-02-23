@@ -34,6 +34,7 @@ keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 keymap.set('n', '<C-l>', vim.lsp.buf.format, opts)
+keymap.set('n', '<C-space>', vim.diagnostic.open_float, opts)
 
 -- telescope
 keymap.set('n', 'fg', telescope_maps.live_grep, { silent = true })
@@ -43,3 +44,4 @@ keymap.set('n', 'fp', telescope_maps.find_files, {})
 
 -- miscelanious
 keymap.set('n', 'q', '')
+keymap.set('n', '<F3>', ':set hlsearch!<CR>', { silent = true })
