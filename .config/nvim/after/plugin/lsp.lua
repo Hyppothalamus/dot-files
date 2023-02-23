@@ -53,15 +53,30 @@ local on_attach = function(client, bufnr)
     end
 end
 
+local _border = "rounded"
+
+local handlers = {
+    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = _border }),
+    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = _border }),
+}
+
 mason_lspconfig.setup_handlers {
     function(server_name) -- default handler (optional)
         lspconfig[server_name].setup(
             require('coq').lsp_ensure_capabilities({
-                on_attach = on_attach
+                on_attach = on_attach,
+                handlers = handlers
             })
         )
     end
 }
+
+vim.diagnostic.config({
+    float = {
+        border = _border,
+    }
+})
+
 null_ls.setup({
     automatic_setup = true
 })
