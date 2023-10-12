@@ -1,4 +1,4 @@
-local ok, gitsign = pcall(require, "gitsigns.nvim")
+local ok, gitsign = pcall(require, "gitsigns")
 if not ok then
     -- not loaded
     print('gitsign not found')

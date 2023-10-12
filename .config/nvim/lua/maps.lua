@@ -7,7 +7,7 @@ keymap.set('n', 'tt', ':terminal<Return>', { silent = true })
 
 -- splits
 keymap.set('n', 'vv', ':vsp<Return>', { silent = true })
-keymap.set('n', 'bb', ':sp<Return>', { silent = true })
+keymap.set('n', 'VV', ':sp<Return>', { silent = true })
 -- close file keybinds
 keymap.set('n', 'qq', ':q<Return>', { silent = true })
 keymap.set('n', 'qx', ':wq<Return>', { silent = true })

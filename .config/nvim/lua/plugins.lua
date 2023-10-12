@@ -19,6 +19,7 @@ packer.startup(function(use)
     use {
         'neovim/nvim-lspconfig', as = 'nvim-lspconfig'
     }
+    use { 'github/copilot.vim' }
     use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
     use 'ms-jpq/coq.artifacts'
     use 'ms-jpq/coq.thirdparty'
@@ -28,7 +29,7 @@ packer.startup(function(use)
     use 'wakatime/vim-wakatime'
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'feline-nvim/feline.nvim', as = 'feline' }
-    use { 'j-hui/fidget.nvim', as = 'fidget' }
+    use { 'j-hui/fidget.nvim', tag = 'legacy', as = 'fidget' }
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use {
         'kyazdani42/nvim-tree.lua',
@@ -36,7 +37,7 @@ packer.startup(function(use)
         requires = {
             'kyazdani42/nvim-web-devicons', -- optional, for file icons
         },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        tag = 'nightly'                     -- optional, updated every week. (see issue #1193)
     }
     use 'kyazdani42/nvim-web-devicons'
     use { "akinsho/toggleterm.nvim", as = 'toggleterm', tag = 'v2.*' }
@@ -47,18 +48,6 @@ packer.startup(function(use)
     use { 'petertriho/nvim-scrollbar', as = 'scrollbar' }
     use {
         'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup({
-                signs = {
-                    add          = { text = '│' },
-                    change       = { text = '│' },
-                    delete       = { text = '_' },
-                    topdelete    = { text = '‾' },
-                    changedelete = { text = '~' },
-                    untracked    = { text = '┆' },
-                },
-            })
-        end
     }
     use {
         "startup-nvim/startup.nvim",
@@ -72,7 +61,7 @@ packer.startup(function(use)
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons", -- optional dependency
         },
-        after = "nvim-web-devicons", -- keep this if you're using NvChad
+        after = "nvim-web-devicons",       -- keep this if you're using NvChad
     })
     use { "edluffy/hologram.nvim", as = "hologram" }
 end)

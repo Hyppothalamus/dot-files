@@ -5,57 +5,57 @@ if not ok then
 end
 
 nvim_tree.setup {
-  disable_netrw       = true,
-  hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
-  open_on_tab         = false,
-  hijack_cursor       = false,
-  update_cwd          = false,
-  respect_buf_cwd     = true,
-  create_in_closed_folder = false,
-  hijack_directories   = {
-    enable = true,
-    auto_open = true,
-  },
-  diagnostics = {
-    enable = false,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    }
-  },
-  update_focused_file = {
-    enable      = true,
-    update_cwd  = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
-  },
-  filters = {
-    dotfiles = false,
-    custom = {}
-  },
-  view = {
-    width = 30,
-    hide_root_folder = false,
-    side = 'left',
-    mappings = {
-      custom_only = false,
-      list = {}
-    }
-  },
-  actions = {
-      open_file = {
-          quit_on_open = true,
-          resize_window = false,
-      }
+    disable_netrw           = true,
+    hijack_netrw            = true,
+    open_on_setup           = false,
+    ignore_ft_on_setup      = {},
+    open_on_tab             = false,
+    hijack_cursor           = false,
+    update_cwd              = false,
+    respect_buf_cwd         = true,
+    create_in_closed_folder = false,
+    hijack_directories      = {
+        enable = true,
+        auto_open = true,
     },
-    renderer = {
+    diagnostics             = {
+        enable = true,
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        }
+    },
+    update_focused_file     = {
+        enable      = true,
+        update_cwd  = false,
+        ignore_list = {}
+    },
+    system_open             = {
+        cmd  = nil,
+        args = {}
+    },
+    filters                 = {
+        dotfiles = true,
+        custom = {}
+    },
+    view                    = {
+        width = 30,
+        hide_root_folder = false,
+        side = 'left',
+        mappings = {
+            custom_only = false,
+            list = {}
+        }
+    },
+    actions                 = {
+        open_file = {
+            quit_on_open = true,
+            resize_window = false,
+        }
+    },
+    renderer                = {
         indent_markers = {
             enable = true,
         },
