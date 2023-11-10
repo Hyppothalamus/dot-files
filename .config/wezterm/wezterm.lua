@@ -1,45 +1,10 @@
+local utils = require('utils')
+local colors = require('colors')
 local wezterm = require('wezterm')
 
 -- This table will hold the configuration.
 local config = {}
-local catppuccin = {
-    macchiato = {
-        rosewater = "#f4dbd6",
-        flamingo = "#f0c6c6",
-        pink = "#f5bde6",
-        mauve = "#c6a0f6",
-        red = "#ed8796",
-        maroon = "#ee99a0",
-        peach = "#f5a97f",
-        yellow = "#eed49f",
-        green = "#a6da95",
-        teal = "#8bd5ca",
-        sky = "#91d7e3",
-        sapphire = "#7dc4e4",
-        blue = "#8aadf4",
-        lavender = "#b7bdf8",
-        text = "#cad3f5",
-    },
-    latte = {
-        rosewater = "#dc8a78",
-        flamingo = "#dd7878",
-        pink = "#ea76cb",
-        mauve = "#8839ef",
-        red = "#d20f39",
-        maroon = "#e64553",
-        peach = "#fe640b",
-        yellow = "#df8e1d",
-        green = "#40a02b",
-        teal = "#179299",
-        sky = "#04a5e5",
-        sapphire = "#209fb5",
-        blue = "#1e66f5",
-        lavender = "#7287fd",
-        text = "#4c4f69",
-    },
-}
 
-local part = '';
 local function scheme_for_appearance(appearance)
     -- if appearance:find "Dark" then
     --     part = 'macchiato'
@@ -48,7 +13,7 @@ local function scheme_for_appearance(appearance)
     --     part = 'latte'
     --     return "Catppuccin Latte"
     -- end
-    part = 'macchiato'
+    colors.part = 'macchiato'
     return "Catppuccin Macchiato"
 end
 
@@ -111,14 +76,14 @@ wezterm.on(
     'format-tab-title',
     function(tab, tabs, panes, config, hover, max_width)
         local tab_index = tab.tab_id
-        local colors = catppuccin[part]
+        local local_colors = colors.catppuccin[colors.part]
         local title = tab_title(tab)
         -- local edge_background = '#181926'
         -- local edge_background = '#181926'
         local edge_background = scheme.tab_bar.background
 
         local background = ''
-        local random_color = Get_random_color(colors)
+        local random_color = utils.Get_random_color(local_colors)
         if tabs_colors[tab_index] == nil then
             tabs_colors[tab_index] = random_color
             background = random_color
@@ -154,18 +119,12 @@ wezterm.on(
 
 config.show_new_tab_button_in_tab_bar = false
 
-function Get_random_color(colors_local)
-    local random_color = colors_local.text
-    while random_color == colors_local.text do
-        local keys = {}
-        for k in pairs(colors_local) do
-            table.insert(keys, k)
-        end
-        local index = math.random(#keys)
-        random_color = colors_local[keys[index]]
+wezterm.on(
+    'format-window-title',
+    function(tab, pane, tabs, panes, config)
+        return tab.active_pane.title
     end
-    return random_color
-end
+)
 
 -- and finally, return the configuration to wezterm
 return config
