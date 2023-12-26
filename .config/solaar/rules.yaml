@@ -1,0 +1,25 @@
+%YAML 1.3
+---
+- MouseGesture: Mouse Left
+- KeyPress:
+  - [Alt_L, Shift_L, Tab]
+  - click
+...
+---
+- MouseGesture: Mouse Right
+- KeyPress:
+  - [Alt_L, Tab]
+  - click
+...
+---
+- MouseGesture: Mouse Up
+- KeyPress:
+  - XF86_AudioRaiseVolume
+  - click
+...
+---
+- MouseGesture: Mouse Down
+- KeyPress:
+  - XF86_AudioLowerVolume
+  - click
+...
