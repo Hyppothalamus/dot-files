@@ -14,7 +14,7 @@
 
 git clone this in a bare repo
 ```bash
-git clone --bare https://github.com/Hyppothalamus/dot-files.git $HOME/.cfg
+git clone --recurse-submodules --bare https://github.com/Hyppothalamus/dot-files.git $HOME/.cfg
 ```
 make and alias to control the repo
 ```bash
