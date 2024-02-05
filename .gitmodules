@@ -1,3 +1,6 @@
 [submodule ".scripts/sp-display"]
 	path = .scripts/sp-display
 	url = https://github.com/Hyppothalamus/sp-polybar.git
+[submodule ".config/nvim/lua/custom"]
+	path = .config/nvim/lua/custom
+	url = git@github.com:Hyppothalamus/nvchad-config
