@@ -1,0 +1,9 @@
+wm.gaps.inner.size: 5
+wm.gaps.focus_follows_mouse: true
+wm.program.compositor: /usr/local/bin/picom --config ~/.config/regolith3/picom/config
+gtk.theme_name: Catppuccin-Macchiato-Standard-Blue-Dark
+gtk.icon_theme_name: ePapirus-Dark
+wm.program.display: rofi -show drun
+regolith.wallpaper.file: ~/Pictures/B - Purple.png
+wm.window.border.size: 2
+wm.floatingwindow.border.size: 2

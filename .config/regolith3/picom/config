@@ -1,0 +1,78 @@
+backend = "glx";
+
+use-damage = true
+
+corner-radius = 5
+
+# Exclude conditions for rounded corners.
+rounded-corners-exclude = [
+  "window_type = 'dock'",
+  "window_type = 'desktop'"
+];
+
+blur-background = true;
+# blur-method = "kernel";
+# blur-size = 100;
+# blur-kern = "5x5gaussian"
+# blur-background-frame = true;
+# blur-background-fixed = true;
+blur-background-exclude = [
+    "class_g = 'Code'",
+    "class_g = 'jetbrains-rider'",
+    "role = 'xborder'",
+    "class_g = 'Peek'",
+	"class_g = 'Pensela'",
+	"name = 'Drawing Board'",
+    "window_type = 'dock'",
+	"window_type = 'dropdown_menu'",
+	"window_type = 'combo'",
+	"window_type = 'popup_menu'",
+	"window_type = 'utility'",
+    "window_type = 'desktop'",
+	"_GTK_FRAME_EXTENTS@:c"
+];
+opacity-exclude = [
+    "name = 'Stratagus'"
+];
+
+animations = true;
+
+fading = true;
+# fade-delta = 3;
+# fade-in-step = 0.03;
+# fade-out-step = 0.03;
+fade-exclude = [
+    "name *= 'ilia'"
+];
+
+# blur:
+# {
+#     method:"kernel";
+#     strength: 10;
+# }
+
+wintypes:
+{
+    tooltip =
+    {
+        # fade: Fade the particular type of windows.
+        fade = true;
+        # shadow: Give those windows shadow
+        shadow = false;
+        # opacity: Default opacity for the type of windows.
+        opacity = 0.85;
+        # focus: Whether to always consider windows of this type focused.
+        focus = true;
+    };
+    dock = { shadow = true; }
+    dnd = { shadow = false; }
+    popup_menu = {
+        opacity = 1.0;
+        shadow = false;
+        fade = true;
+    }
+    dropdown_menu = {
+        opacity = 1.0;
+        fade = false;
+    }
+};

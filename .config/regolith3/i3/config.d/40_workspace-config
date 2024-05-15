@@ -1,0 +1,17 @@
+assign [class="Firefox"] $ws2
+
+for_window [class="Firefox-esr" instance="Devtools"] floating enable
+
+for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
+
+for_window [class="Docker Desktop"] floating enable
+
+assign [class="Chromium"] $ws2
+
+for_window [class="org.remmina.Remmina"] floating enable
+
+for_window [class="PulseUI"] floating enable
+
+smart_gaps off
+
+hide_edge_borders on
