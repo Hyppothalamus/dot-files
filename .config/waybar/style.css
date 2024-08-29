@@ -26,8 +26,15 @@
 }
 
 #workspaces button.active {
-  color: @sky;
+  color: @text;
   border-radius: 1rem;
+  background-color: @mauve;
+}
+
+#workspaces button.urgent {
+  color: @text;
+  border-radius: 1rem;
+  background-color: @red;
 }
 
 #workspaces button:hover {
