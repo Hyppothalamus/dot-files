@@ -50,6 +50,7 @@
 #pulseaudio,
 #custom-lock,
 #memory,
+#temperature,
 #cpu, #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
@@ -59,9 +60,16 @@
 #memory {
   color: @blue;
   border-radius: 1rem 0px 0px 1rem;
+  padding-right: 0;
 }
 
 #cpu {
+  color: @blue;
+  padding-right: 0;
+  /*border-radius: 0px 1rem 1rem 0px;*/
+}
+
+#temperature {
   color: @blue;
   border-radius: 0px 1rem 1rem 0px;
 }

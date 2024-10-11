@@ -3,7 +3,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "memory", "cpu"],
+    "modules-left": ["hyprland/workspaces", "memory", "cpu", "temperature"],
     "modules-center": ["custom/music"],
     "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
@@ -29,6 +29,11 @@
     "cpu": {
       "interval": 2,
       "format": "{usage}%  ",
+    },
+    "temperature": {
+      "hwmon-path": "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon6/temp1_input",
+      "format-icons": ["", "", "", "", ""],
+      "format": "{temperatureC}°C {icon}"
     },
     "tray": {
         "icon-size": 21,
