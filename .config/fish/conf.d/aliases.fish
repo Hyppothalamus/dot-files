@@ -8,6 +8,8 @@ alias emacs='emacsclient -c -a "emacs"'
 alias neo='neo -D'
 alias vim='nvim'
 alias sudo='doas'
+alias ..="cd .."
+alias ...="cd ../.."
 
 function cdls 
     cd $argv; ll

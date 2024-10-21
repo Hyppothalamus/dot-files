@@ -29,18 +29,25 @@ end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 config.font =
-    wezterm.font('JetBrains Mono')
+    wezterm.font('JetBrainsMono Nerd Font')
 
 config.font_size = 14
 
 config.initial_cols = 120
 
 config.window_frame = {
-    font = wezterm.font { family = "JetBrains Mono" },
+    font = wezterm.font { family = "JetBrainsMono Nerd Font Mono" },
     font_size = 14,
     active_titlebar_bg = '#333333',
     inactive_titlebar_bg = '#333333'
 
+}
+
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
 }
 
 wezterm.on("window-focus-changed", function()
