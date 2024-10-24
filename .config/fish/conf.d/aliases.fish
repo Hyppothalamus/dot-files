@@ -9,6 +9,8 @@ alias neo='neo -D'
 alias vim='nvim'
 alias sudo='doas'
 alias fix-waybar='killall waybar && waybar & && disown (pidof waybar)'
+alias ..="cd .."
+alias ...="cd ../.."
 
 function cdls 
     cd $argv; ll
