@@ -8,6 +8,7 @@ alias emacs='emacsclient -c -a "emacs"'
 alias neo='neo -D'
 alias vim='nvim'
 alias sudo='doas'
+alias fix-waybar='killall waybar && waybar & && disown (pidof waybar)'
 
 function cdls 
     cd $argv; ll
